@@ -6,50 +6,69 @@
   <title>Matthew Davenport | Portfolio</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', Arial, sans-serif; color: #222; line-height: 1.6; background: #f7f7f7; }
-    header { background: #1a3a6b; color: #fff; padding: 1rem 2rem; position: sticky; top: 0; z-index: 10; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: #222; line-height: 1.6; background: #fafafa; }
+    header { background: #CC0033; color: #fff; padding: .8rem 2rem; position: sticky; top: 0; z-index: 10; }
     nav { display: flex; justify-content: space-between; align-items: center; max-width: 1000px; margin: 0 auto; }
-    nav .logo { font-weight: bold; font-size: 1.2rem; }
+    nav .logo { display: flex; align-items: center; gap: .6rem; font-weight: bold; font-size: 1.2rem; }
+    nav .logo .sep { font-weight: normal; opacity: .75; }
     nav ul { list-style: none; display: flex; gap: 1.2rem; flex-wrap: wrap; }
     nav a { color: #fff; text-decoration: none; }
     nav a:hover { text-decoration: underline; }
     .hero { max-width: 1000px; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 10px;
             display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
-    .hero img { width: 180px; height: 180px; object-fit: cover; border-radius: 50%; border: 4px solid #1a3a6b; }
-    .hero h1 { font-size: 2rem; color: #1a3a6b; }
+    .hero img { width: 180px; height: 180px; object-fit: cover; border-radius: 50%; border: 4px solid #CC0033; }
+    .hero h1 { font-size: 2rem; color: #CC0033; }
     .hero p.tagline { color: #555; margin: .5rem 0 1rem; }
-    .btn { display: inline-block; background: #1a3a6b; color: #fff; padding: .6rem 1.2rem;
+    .btn { display: inline-block; background: #CC0033; color: #fff; padding: .6rem 1.2rem;
            border-radius: 6px; text-decoration: none; margin-right: .5rem; margin-top: .3rem; }
-    .btn:hover { background: #254e8f; }
-    .btn.outline { background: #fff; color: #1a3a6b; border: 2px solid #1a3a6b; }
+    .btn:hover { background: #a30029; }
+    .btn.outline { background: #fff; color: #CC0033; border: 2px solid #CC0033; }
+    .btn.outline:hover { background: #CC0033; color: #fff; }
+    .dropdown { display: inline-block; position: relative; }
+    .dropdown summary { list-style: none; cursor: pointer; }
+    .dropdown summary::-webkit-details-marker { display: none; }
+    .dropdown-menu { position: absolute; top: 115%; left: 0; background: #fff; border: 1px solid #ddd;
+                     border-radius: 8px; box-shadow: 0 4px 14px rgba(0,0,0,.15); padding: 1rem 1.2rem;
+                     min-width: 300px; z-index: 20; }
+    .dropdown-menu p { font-size: .9rem; color: #333; margin-bottom: .45rem; }
+    .dropdown-menu p:last-child { margin-bottom: 0; }
+    .dropdown-menu a { color: #CC0033; }
     section { max-width: 1000px; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 10px;
               box-shadow: 0 2px 8px rgba(0,0,0,.08); }
-    section h2 { color: #1a3a6b; margin-bottom: 1rem; border-bottom: 3px solid #1a3a6b;
+    section h2 { color: #CC0033; margin-bottom: 1rem; border-bottom: 3px solid #CC0033;
                  display: inline-block; padding-bottom: .25rem; }
     .job { margin-bottom: 1.5rem; }
     .job:last-child { margin-bottom: 0; }
-    .job h3 { color: #1a3a6b; }
+    .job h3 { color: #CC0033; }
     .job .meta { color: #666; font-size: .92rem; margin-bottom: .4rem; }
     .job ul { margin-left: 1.2rem; color: #444; font-size: .95rem; }
     .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; margin-top: 1rem; }
     .card { border: 1px solid #ddd; border-radius: 8px; padding: 1.2rem; background: #fafafa; }
-    .card h3 { color: #1a3a6b; margin-bottom: .4rem; }
+    .card h3 { color: #CC0033; margin-bottom: .4rem; }
     .card p { font-size: .95rem; color: #444; }
-    .stat { font-size: 1.6rem; font-weight: bold; color: #1a3a6b; }
+    .card a { color: #CC0033; font-weight: bold; }
+    .stat { font-size: 1.6rem; font-weight: bold; color: #CC0033; }
     .skills-group { margin-bottom: 1rem; }
     .skills-group:last-child { margin-bottom: 0; }
-    .skills-group h3 { font-size: 1rem; color: #1a3a6b; margin-bottom: .4rem; }
+    .skills-group h3 { font-size: 1rem; color: #CC0033; margin-bottom: .4rem; }
     ul.skills { list-style: none; display: flex; flex-wrap: wrap; gap: .6rem; }
-    ul.skills li { background: #e8eef7; color: #1a3a6b; padding: .35rem .8rem; border-radius: 20px; font-size: .9rem; }
+    ul.skills li { background: #fde9ee; color: #CC0033; padding: .35rem .8rem; border-radius: 20px; font-size: .9rem; }
     footer { text-align: center; padding: 2rem; color: #666; font-size: .9rem; }
-    footer a { color: #1a3a6b; }
+    footer a { color: #CC0033; }
   </style>
 </head>
 <body>
 
   <header>
     <nav>
-      <div class="logo">Matthew Davenport</div>
+      <div class="logo">
+        <svg width="34" height="34" viewBox="0 0 40 40" role="img" aria-label="Rutgers logo">
+          <rect width="40" height="40" rx="7" fill="#ffffff"/>
+          <text x="20" y="30" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="bold" font-size="26" fill="#CC0033">R</text>
+        </svg>
+        <span class="sep">|</span>
+        <span>Matthew Davenport</span>
+      </div>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -67,6 +86,16 @@
       <h1>Matthew Davenport</h1>
       <p class="tagline">Rutgers Business School '28 &nbsp;|&nbsp; Marketing &amp; Supply Chain Management</p>
       <a class="btn" href="DAVENPORT - RESUME.pdf" download>Download Resume</a>
+      <div class="dropdown">
+        <details>
+          <summary class="btn outline">Email Me &#9662;</summary>
+          <div class="dropdown-menu">
+            <p><strong>Email:</strong> <a href="mailto:md1968@scarletmail.rutgers.edu">md1968@scarletmail.rutgers.edu</a></p>
+            <p><strong>Phone:</strong> (508)-850-6544</p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/matt-davenport-80682729b/" target="_blank">linkedin.com/in/matt-davenport-80682729b</a></p>
+          </div>
+        </details>
+      </div>
       <a class="btn outline" href="#projects">View My Work</a>
     </div>
   </div>
@@ -75,7 +104,7 @@
     <h2>About Me</h2>
     <p>
       I'm a junior at Rutgers Business School in New Brunswick, NJ, double majoring in
-      <strong>Marketing</strong> and <strong>Supply Chain Management</strong>, 
+      <strong>Marketing</strong> and <strong>Supply Chain Management</strong>,
       I work at the intersection of brand storytelling and operations — building content
       audiences actually engage with and backing it with data.
     </p>

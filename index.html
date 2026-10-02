@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[Your Name] | Portfolio</title>
+  <title>Matthew Davenport | Portfolio</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Segoe UI', Arial, sans-serif; color: #222; line-height: 1.6; background: #f7f7f7; }
-    header { background: #1a3a6b; color: #fff; padding: 1rem 2rem; position: sticky; top: 0; }
+    header { background: #1a3a6b; color: #fff; padding: 1rem 2rem; position: sticky; top: 0; z-index: 10; }
     nav { display: flex; justify-content: space-between; align-items: center; max-width: 1000px; margin: 0 auto; }
     nav .logo { font-weight: bold; font-size: 1.2rem; }
-    nav ul { list-style: none; display: flex; gap: 1.2rem; }
+    nav ul { list-style: none; display: flex; gap: 1.2rem; flex-wrap: wrap; }
     nav a { color: #fff; text-decoration: none; }
     nav a:hover { text-decoration: underline; }
     .hero { max-width: 1000px; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 10px;
@@ -19,19 +19,27 @@
     .hero h1 { font-size: 2rem; color: #1a3a6b; }
     .hero p.tagline { color: #555; margin: .5rem 0 1rem; }
     .btn { display: inline-block; background: #1a3a6b; color: #fff; padding: .6rem 1.2rem;
-           border-radius: 6px; text-decoration: none; margin-right: .5rem; }
+           border-radius: 6px; text-decoration: none; margin-right: .5rem; margin-top: .3rem; }
     .btn:hover { background: #254e8f; }
     .btn.outline { background: #fff; color: #1a3a6b; border: 2px solid #1a3a6b; }
     section { max-width: 1000px; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 10px;
               box-shadow: 0 2px 8px rgba(0,0,0,.08); }
     section h2 { color: #1a3a6b; margin-bottom: 1rem; border-bottom: 3px solid #1a3a6b;
                  display: inline-block; padding-bottom: .25rem; }
+    .job { margin-bottom: 1.5rem; }
+    .job:last-child { margin-bottom: 0; }
+    .job h3 { color: #1a3a6b; }
+    .job .meta { color: #666; font-size: .92rem; margin-bottom: .4rem; }
+    .job ul { margin-left: 1.2rem; color: #444; font-size: .95rem; }
     .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; margin-top: 1rem; }
     .card { border: 1px solid #ddd; border-radius: 8px; padding: 1.2rem; background: #fafafa; }
     .card h3 { color: #1a3a6b; margin-bottom: .4rem; }
     .card p { font-size: .95rem; color: #444; }
-    .card a { color: #1a3a6b; font-weight: bold; }
-    ul.skills { list-style: none; display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .8rem; }
+    .stat { font-size: 1.6rem; font-weight: bold; color: #1a3a6b; }
+    .skills-group { margin-bottom: 1rem; }
+    .skills-group:last-child { margin-bottom: 0; }
+    .skills-group h3 { font-size: 1rem; color: #1a3a6b; margin-bottom: .4rem; }
+    ul.skills { list-style: none; display: flex; flex-wrap: wrap; gap: .6rem; }
     ul.skills li { background: #e8eef7; color: #1a3a6b; padding: .35rem .8rem; border-radius: 20px; font-size: .9rem; }
     footer { text-align: center; padding: 2rem; color: #666; font-size: .9rem; }
     footer a { color: #1a3a6b; }
@@ -41,10 +49,11 @@
 
   <header>
     <nav>
-      <div class="logo">[Your Name]</div>
+      <div class="logo">Matthew Davenport</div>
       <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Portfolio</a></li>
         <li><a href="#resume">Resume</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -53,11 +62,11 @@
 
   <!-- HERO: upload your file named HEADSHOT OFFICIAL.png to your repo root -->
   <div class="hero">
-    <img src="HEADSHOT OFFICIAL.png" alt="Headshot of [Your Name]">
+    <img src="HEADSHOT OFFICIAL.png" alt="Headshot of Matthew Davenport">
     <div>
-      <h1>[Your Name]</h1>
-      <p class="tagline">Rutgers Business School student | [Your major / focus, e.g. Business Analytics]</p>
-      <a class="btn" href="resume.pdf" download>Download Resume</a>
+      <h1>Matthew Davenport</h1>
+      <p class="tagline">Rutgers Business School '28 &nbsp;|&nbsp; Marketing &amp; Supply Chain Management</p>
+      <a class="btn" href="DAVENPORT_-_PWC_RESUME.pdf" download>Download Resume</a>
       <a class="btn outline" href="#projects">View My Work</a>
     </div>
   </div>
@@ -65,37 +74,116 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I'm a [year, e.g. junior] at Rutgers Business School studying [major].
-      I'm interested in [interests, e.g. business analytics, operations, finance],
-      and I'm building experience through coursework, projects, and [clubs / internships / work].
+      I'm a junior at Rutgers Business School in New Brunswick, NJ, double majoring in
+      <strong>Marketing</strong> and <strong>Supply Chain Management</strong> (Class of 2028).
+      I work at the intersection of brand storytelling and operations — building content
+      audiences actually engage with and backing it with data.
     </p>
-    <ul class="skills">
-      <li>Excel</li>
-      <li>Python</li>
-      <li>Data Analysis</li>
-      <li>Public Speaking</li>
-      <!-- add more skills here -->
-    </ul>
+    <p style="margin-top:.6rem;">
+      <strong>Recent Term GPA:</strong> 3.58 &nbsp;|&nbsp; <strong>Cumulative GPA:</strong> 3.43
+      &nbsp;|&nbsp; <strong>Hometown:</strong> Plymouth, MA
+    </p>
+    <div style="margin-top:1rem;">
+      <div class="skills-group">
+        <h3>Marketing &amp; Content</h3>
+        <ul class="skills">
+          <li>Social media strategy</li>
+          <li>Multimedia production</li>
+          <li>Brand storytelling</li>
+          <li>Live coverage</li>
+        </ul>
+      </div>
+      <div class="skills-group">
+        <h3>Analytics &amp; Tools</h3>
+        <ul class="skills">
+          <li>Google Analytics</li>
+          <li>KPI tracking</li>
+          <li>ROI / ROAS optimization</li>
+          <li>Monday.com</li>
+        </ul>
+      </div>
+      <div class="skills-group">
+        <h3>Business &amp; Operations</h3>
+        <ul class="skills">
+          <li>Project management</li>
+          <li>Workflow optimization</li>
+          <li>Customer relations</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="job">
+      <h3>Marketing Operations Intern — BJ's Wholesale Club</h3>
+      <p class="meta">Marlboro, MA &nbsp;|&nbsp; June 2026 – August 2026</p>
+      <ul>
+        <li>Developed and executed a full-scale capstone project focused on boosting shopper engagement and marketing efficiency.</li>
+        <li>Built data-backed strategies that increased shopper traffic, expanded average basket size, and strengthened ROI and ROAS across key digital and in-club channels.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>Viceroy — Barstool Sports</h3>
+      <p class="meta">New Brunswick, NJ &nbsp;|&nbsp; April 2026 – Present</p>
+      <ul>
+        <li>Develop and publish multimedia content covering Rutgers athletics, campus events, and student-driven humor.</li>
+        <li>Drove 3.2M+ views, 1,000+ new followers, and 97,000 interactions since taking over the account.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>Administrative Vice President — Rutgers Club Lacrosse</h3>
+      <p class="meta">New Brunswick, NJ &nbsp;|&nbsp; April 2026 – Present</p>
+      <ul>
+        <li>Oversee schedule planning, roster creation, and coordination with league staff and partner teams.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>Head of Marketing — Rutgers Club Lacrosse</h3>
+      <p class="meta">New Brunswick, NJ &nbsp;|&nbsp; March 2025 – Present</p>
+      <ul>
+        <li>Run Instagram and Twitter strategy featuring live streams, score updates, highlights, and branded graphics.</li>
+        <li>Drove 120,000+ views, 500+ new followers, and 3,000+ likes.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>Leasing Assistant — RUliving</h3>
+      <p class="meta">New Brunswick, NJ &nbsp;|&nbsp; August 2025 – August 2026</p>
+      <ul>
+        <li>Surpassed monthly leasing goals through relationship-building and precise CRM management.</li>
+        <li>Led pre-leasing campaigns and targeted marketing initiatives to reach 100% occupancy.</li>
+      </ul>
+    </div>
   </section>
 
   <section id="projects">
-    <h2>Projects &amp; Portfolio</h2>
-    <p>Selected work from my classes and extracurriculars. Each one shows what I can do — not just what I've done.</p>
+    <h2>Portfolio Highlights</h2>
+    <p>Selected results from my work — each one shows what I can do and what I care about.</p>
     <div class="projects">
       <div class="card">
-        <h3>[Project 1 Title]</h3>
-        <p>[1–2 sentences: what the project was, what you did, and the result.]</p>
-        <p><a href="#">View project file</a></p>
+        <p class="stat">3.2M+</p>
+        <h3>Barstool Sports Content</h3>
+        <p>Multimedia coverage of Rutgers athletics and campus life as Viceroy — 3.2M+ views, 1,000+ new followers, 97K interactions.</p>
       </div>
       <div class="card">
-        <h3>[Project 2 Title]</h3>
-        <p>[1–2 sentences: what the project was, what you did, and the result.]</p>
-        <p><a href="#">View project file</a></p>
+        <p class="stat">Capstone</p>
+        <h3>BJ's Wholesale Club</h3>
+        <p>Full-scale marketing operations capstone: data-backed strategies that lifted shopper traffic, basket size, ROI, and ROAS.</p>
       </div>
       <div class="card">
-        <h3>[Project 3 Title]</h3>
-        <p>[1–2 sentences: what the project was, what you did, and the result.]</p>
-        <p><a href="#">View project file</a></p>
+        <p class="stat">120K+</p>
+        <h3>Club Lacrosse Marketing</h3>
+        <p>Built the team's social presence from the ground up — live streams, highlights, branded graphics; 120K+ views and 500+ new followers.</p>
+      </div>
+      <div class="card">
+        <p class="stat">100%</p>
+        <h3>RUliving Leasing</h3>
+        <p>Pre-leasing campaigns and CRM-driven outreach that pushed the property to 100% occupancy.</p>
       </div>
     </div>
   </section>
@@ -103,19 +191,19 @@
   <section id="resume">
     <h2>Resume</h2>
     <p>Download a PDF copy of my resume:</p>
-    <p style="margin-top:.8rem;"><a class="btn" href="resume.pdf" download>Download Resume (PDF)</a></p>
-    <!-- make sure resume.pdf is uploaded to your repo root -->
+    <p style="margin-top:.8rem;"><a class="btn" href="DAVENPORT_-_PWC_RESUME.pdf" download>Download Resume (PDF)</a></p>
+    <!-- upload your resume to the repo root with the exact filename DAVENPORT_-_PWC_RESUME.pdf -->
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:[you]@scarletmail.rutgers.edu">[you]@scarletmail.rutgers.edu</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/[your-handle]" target="_blank">linkedin.com/in/[your-handle]</a></p>
-    <p>GitHub: <a href="https://github.com/[your-username]" target="_blank">github.com/[your-username]</a></p>
+    <p>Email: <a href="mailto:md1968@scarletmail.rutgers.edu">md1968@scarletmail.rutgers.edu</a></p>
+    <p>Phone: (508)-850-6544</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/matt-davenport-80682729b/" target="_blank">linkedin.com/in/matt-davenport-80682729b</a></p>
   </section>
 
   <footer>
-    &copy; 2026 [Your Name] · Built with GitHub Pages
+    &copy; 2026 Matthew Davenport · Built with GitHub Pages
   </footer>
 
 </body>
